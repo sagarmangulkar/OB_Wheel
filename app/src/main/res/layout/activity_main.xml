@@ -6,13 +6,27 @@
     android:layout_height="match_parent"
     tools:context="com.example.macbookpro.ob_wheels.MainActivity">
 
-    <TextView
+    <Button
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Calender based calculator"
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="98dp" />
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Traditional OB wheels"
+        tools:layout_editor_absoluteX="96dp"
+        tools:layout_editor_absoluteY="231dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Setting EDD from LMP & sono"
+        tools:layout_editor_absoluteX="73dp"
+        tools:layout_editor_absoluteY="355dp" />
 </android.support.constraint.ConstraintLayout>
