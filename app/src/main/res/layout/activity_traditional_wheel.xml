@@ -4,18 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.macbookpro.ob_wheels.CalenderActivity">
+    tools:context="com.example.macbookpro.ob_wheels.TraditionalWheelActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="On Calender Layout"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="110dp"
-        tools:layout_constraintLeft_creator="1"
+        android:layout_marginLeft="53dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="39dp"
+        android:text="On Traditional Wheel Layout"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
 </android.support.constraint.ConstraintLayout>
