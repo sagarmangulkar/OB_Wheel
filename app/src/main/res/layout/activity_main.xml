@@ -4,6 +4,14 @@
     android:gravity="center"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="@string/Choose_a_resource"
+        android:gravity="center"
+        android:layout_marginBottom="36dp"
+        android:textSize="20dp"/>
+
     <Button
         android:id="@+id/button_cal"
         android:layout_width="wrap_content"
@@ -13,7 +21,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="sdgf sfdgkjfgjsd gfksd f" />
+        android:text="@string/determine_edd_and_ega_vie_lmp_sono_etc" />
 
     <Button
         android:id="@+id/button_wheel"
@@ -25,7 +33,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="sdgf sfdgkjfgjsd gfksd f" />
+        android:text="@string/it_s_the_real_wheel_clunky_but_accurate" />
 
     <Button
         android:id="@+id/button_setting_edd"
@@ -35,7 +43,8 @@
         android:text="@string/setting_edd_from_lmp_and_sono" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="sdgf sfdgkjfgjsd gfksd f" />
+        android:gravity="center"
+        android:text="@string/scheme_for_using_lmp_and_sonogram" />
 </LinearLayout>

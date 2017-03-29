@@ -5,10 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -17,8 +15,8 @@ import java.util.Calendar;
 public class CalenderActivity extends AppCompatActivity {
 
     static final int DIALOG_ID = 0;
-    public EditText editDate1;
-    public EditText editDate2;
+    public Button editDate1;
+    public Button editDate2;
     int year_x, month_x, day_x;
 
     /*
@@ -46,13 +44,14 @@ public class CalenderActivity extends AppCompatActivity {
     }
 
 */
-
+    private DatePickerDialog datePickerDialog1;
+    private DatePickerDialog datePickerDialog2;
     private DatePickerDialog.OnDateSetListener dPickerListener = new DatePickerDialog.OnDateSetListener() {
         @Override
         public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-            if(view == datePickerDialog1.getDatePicker()) {
+            if (view == datePickerDialog1.getDatePicker()) {
                 Log.d("DEBUG", "1");
-            } else  if(view == datePickerDialog2.getDatePicker()) {
+            } else if (view == datePickerDialog2.getDatePicker()) {
                 Log.d("DEBUG", "2");
             }
             /*year_x = year;
@@ -66,8 +65,6 @@ public class CalenderActivity extends AppCompatActivity {
             }*/
         }
     };
-    private DatePickerDialog datePickerDialog1;
-    private DatePickerDialog datePickerDialog2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,7 +89,7 @@ public class CalenderActivity extends AppCompatActivity {
     }*/
 
     public void showDialogOnEditText() {
-        editDate1 = (EditText) findViewById(R.id.editText);
+        editDate1 = (Button) findViewById(R.id.edit_text_date1);
         datePickerDialog1 = new DatePickerDialog(CalenderActivity.this, dPickerListener, year_x, month_x, day_x);
         datePickerDialog2 = new DatePickerDialog(CalenderActivity.this, dPickerListener, year_x, month_x, day_x);
 
@@ -113,7 +110,7 @@ public class CalenderActivity extends AppCompatActivity {
         });
 
         //for second datePicker
-        editDate2 = (EditText) findViewById(R.id.editText2);
+        editDate2 = (Button) findViewById(R.id.edit_text_date2);
         editDate2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

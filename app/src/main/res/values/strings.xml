@@ -3,4 +3,8 @@
     <string name="calender_based_calculator">Calender based calculator</string>
     <string name="traditional_ob_wheels">Traditional OB wheels</string>
     <string name="setting_edd_from_lmp_and_sono">Setting EDD from LMP and sono</string>
+    <string name="determine_edd_and_ega_vie_lmp_sono_etc">Determine EDD and EGA vie LMP, Sono, etc.</string>
+    <string name="it_s_the_real_wheel_clunky_but_accurate">It\'s the real wheel, clunky but accurate</string>
+    <string name="scheme_for_using_lmp_and_sonogram"><![CDATA[scheme for using LMP and sonogram to determine final EDD (for students & residents)]]></string>
+    <string name="Choose_a_resource">Choose a resource for determining estimated due date (EDD), estimated gestational age (EGA), and setting a final EDD.</string>
 </resources>
