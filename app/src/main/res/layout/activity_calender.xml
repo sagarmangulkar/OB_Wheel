@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context="com.example.macbookpro.ob_wheels.CalenderActivity">
 
+    <EditText
+        android:id="@+id/editText7"
+        android:layout_width="30dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="D"
+        tools:layout_editor_absoluteX="288dp"
+        tools:layout_editor_absoluteY="16dp" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -20,7 +30,9 @@
         app:layout_constraintTop_toBottomOf="@+id/tableLayout"
         tools:layout_constraintLeft_creator="1"
         android:layout_marginBottom="39dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.167"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TableLayout
         android:layout_width="0dp"
@@ -47,10 +59,10 @@
 
             <TextView
                 android:id="@+id/textView4"
-                android:layout_width="117dp"
-                android:layout_height="32dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="Dating By:"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 tools:layout_editor_absoluteX="99dp"
                 tools:layout_editor_absoluteY="393dp" />
 
@@ -59,7 +71,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="LMP or EDD"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 tools:layout_editor_absoluteX="155dp"
                 tools:layout_editor_absoluteY="39dp" />
 
@@ -68,21 +80,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sono "
-                android:textSize="30sp"
+                android:textSize="25sp"
                 tools:layout_editor_absoluteX="246dp"
                 tools:layout_editor_absoluteY="16dp" />
         </TableRow>
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/textView10"
-                android:layout_width="117dp"
-                android:layout_height="32dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="Date of"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 tools:layout_editor_absoluteX="46dp"
                 tools:layout_editor_absoluteY="422dp" />
 
@@ -101,14 +113,67 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sono"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 tools:layout_editor_absoluteX="246dp"
                 tools:layout_editor_absoluteY="16dp" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sono EAG"
+                android:textSize="25sp"
+                tools:layout_editor_absoluteX="46dp"
+                tools:layout_editor_absoluteY="422dp" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="114dp"
+                android:layout_height="match_parent"
+                android:text="enter from sono report at right ---->"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="116dp"
+                tools:layout_editor_absoluteY="130dp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EDD"
+                android:textSize="25sp"
+                tools:layout_editor_absoluteX="99dp"
+                tools:layout_editor_absoluteY="393dp" />
+
+            <EditText
+                android:id="@+id/editText2"
+                android:layout_width="144dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="date"
+                android:text="Enter name"
+                tools:layout_editor_absoluteX="131dp"
+                tools:layout_editor_absoluteY="237dp" />
+
+            <EditText
+                android:id="@+id/editText3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="date"
+                android:text="Enter name"
+                tools:layout_editor_absoluteX="131dp"
+                tools:layout_editor_absoluteY="237dp" />
 
         </TableRow>
 
@@ -116,5 +181,33 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </TableLayout>
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="29dp"
+        android:layout_height="35dp"
+        android:text="W"
+        android:textSize="25sp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:layout_editor_absoluteX="178dp" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="29dp"
+        android:layout_height="35dp"
+        android:text="D"
+        android:textSize="25sp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <EditText
+        android:id="@+id/editText6"
+        android:layout_width="31dp"
+        android:layout_height="33dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="W"
+        tools:layout_editor_absoluteX="225dp"
+        tools:layout_editor_absoluteY="35dp" />
 
 </android.support.constraint.ConstraintLayout>

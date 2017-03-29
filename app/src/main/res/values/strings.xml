@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">OB_Wheels</string>
+    <string name="calender_based_calculator">Calender based calculator</string>
+    <string name="traditional_ob_wheels">Traditional OB wheels</string>
+    <string name="setting_edd_from_lmp_and_sono">Setting EDD from LMP and sono</string>
 </resources>

@@ -1,25 +1,25 @@
 package com.example.macbookpro.ob_wheels;
 
 import android.app.DatePickerDialog;
-//import android.icu.util.Calendar;
-import android.app.Dialog;
-import android.app.DialogFragment;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.app.DatePickerDialog;
-import android.widget.DatePicker;
 import android.widget.Toast;
 
-import java.text.DateFormat;
 import java.util.Calendar;
-import java.util.GregorianCalendar;
+
+//import android.icu.util.Calendar;
 
 public class CalenderActivity extends AppCompatActivity {
+
+    static final int DIALOG_ID = 0;
+    public EditText editDate1;
+    public EditText editDate2;
+    int year_x, month_x, day_x;
 
     /*
     public EditText editDate1;
@@ -46,9 +46,28 @@ public class CalenderActivity extends AppCompatActivity {
     }
 
 */
-    public EditText editDate1;
-    int year_x, month_x, day_x;
-    static final int DIALOG_ID = 0;
+
+    private DatePickerDialog.OnDateSetListener dPickerListener = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+            if(view == datePickerDialog1.getDatePicker()) {
+                Log.d("DEBUG", "1");
+            } else  if(view == datePickerDialog2.getDatePicker()) {
+                Log.d("DEBUG", "2");
+            }
+            /*year_x = year;
+            month_x = month + 1;
+            day_x = dayOfMonth;
+            Toast.makeText(CalenderActivity.this, year_x + "/" + month_x + "/" + day_x + " : " + view.getId() + " == " + R.id.editText + " | " + R.id.editText2, Toast.LENGTH_LONG).show();
+            if (view.getId() == R.id.editText) {
+                editDate1.setText(year_x + "/" + month_x + "/" + day_x, TextView.BufferType.EDITABLE);
+            } else if (view.getId() == R.id.editText2) {
+                editDate2.setText(year_x + "/" + month_x + "/" + day_x, TextView.BufferType.EDITABLE);
+            }*/
+        }
+    };
+    private DatePickerDialog datePickerDialog1;
+    private DatePickerDialog datePickerDialog2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,34 +82,53 @@ public class CalenderActivity extends AppCompatActivity {
         showDialogOnEditText();
     }
 
-    public void showDialogOnEditText(){
-        editDate1 = (EditText) findViewById(R.id.editText);
-        editDate1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDialog(DIALOG_ID);
-            }
-        });
-    }
 
-
-    @Override
+    /*@Override
     protected Dialog onCreateDialog(int id){
         if (DIALOG_ID == id){
             return new DatePickerDialog(this, dPickerListener, year_x, month_x, day_x);
         }
         return null;
-    }
+    }*/
 
-    private DatePickerDialog.OnDateSetListener dPickerListener = new DatePickerDialog.OnDateSetListener() {
-        @Override
-        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-            year_x = year;
-            month_x = month + 1;
-            day_x = dayOfMonth;
-            Toast.makeText(CalenderActivity.this, year_x + "/" + month_x + "/" + day_x, Toast.LENGTH_LONG).show();
-            editDate1.setText(year_x + "/" + month_x + "/" + day_x, TextView.BufferType.EDITABLE);
-        }
-    };
+    public void showDialogOnEditText() {
+        editDate1 = (EditText) findViewById(R.id.editText);
+        datePickerDialog1 = new DatePickerDialog(CalenderActivity.this, dPickerListener, year_x, month_x, day_x);
+        datePickerDialog2 = new DatePickerDialog(CalenderActivity.this, dPickerListener, year_x, month_x, day_x);
+
+        editDate1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datePickerDialog1.show();
+                /*new DatePickerDialog(CalenderActivity.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        Toast.makeText(CalenderActivity.this,
+                                year_x + "/" + month_x + "/" + day_x + " : " +
+                                        view.getId() + " == " + R.id.editText + " | " + R.id.editText2, Toast.LENGTH_LONG)
+                                .show();
+                    }
+                }, year_x, month_x, day_x).show();*/
+            }
+        });
+
+        //for second datePicker
+        editDate2 = (EditText) findViewById(R.id.editText2);
+        editDate2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datePickerDialog2.show();
+                /*new DatePickerDialog(CalenderActivity.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        Toast.makeText(CalenderActivity.this,
+                                year_x + "/" + month_x + "/" + day_x + " : " +
+                                        view.getId() + " == " + R.id.editText + " | " + R.id.editText2, Toast.LENGTH_LONG)
+                                .show();
+                    }
+                }, year_x, month_x, day_x).show();*/
+            }
+        });
+    }
 
 }
