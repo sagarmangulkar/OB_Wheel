@@ -56,7 +56,7 @@
                 android:text="03-29-2017" />
 
             <Button
-                android:id="@+id/edit_text_date1"
+                android:id="@+id/edit_text_date2"
                 style="?background"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -91,7 +91,7 @@
                 android:gravity="center">
 
                 <Button
-                    android:id="@+id/edit_text_date1"
+                    android:id="@+id/edit_text_week1"
                     style="?background"
                     android:layout_width="35dp"
                     android:layout_height="wrap_content"
@@ -105,7 +105,7 @@
                     android:text="W" />
 
                 <Button
-                    android:id="@+id/edit_text_date2"
+                    android:id="@+id/edit_text_day1"
                     style="?background"
                     android:layout_width="35dp"
                     android:layout_height="wrap_content"
@@ -132,7 +132,7 @@
                 android:text="(EDD)-" />
 
             <Button
-                android:id="@+id/edit_text_date1"
+                android:id="@+id/edit_text_date3"
                 style="?background"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -140,7 +140,7 @@
                 android:text="03-29-2017"/>
 
             <Button
-                android:id="@+id/edit_text_date1"
+                android:id="@+id/edit_text_date4"
                 style="?background"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -159,7 +159,7 @@
                 android:text="(EGA as of)-" />
 
             <Button
-                android:id="@+id/edit_text_date1"
+                android:id="@+id/edit_text_date5"
                 style="?background"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -167,7 +167,7 @@
                 android:text="03-29-2017"/>
 
             <Button
-                android:id="@+id/edit_text_date1"
+                android:id="@+id/edit_text_date6"
                 style="?background"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -189,6 +189,7 @@
             <LinearLayout android:layout_width="wrap_content">
 
                 <Button
+                    android:id="@+id/edit_text_week2"
                     android:layout_width="35dp"
                     android:layout_height="wrap_content"
                     android:text="W"/>
@@ -200,6 +201,7 @@
                     android:text="W"/>
 
                 <Button
+                    android:id="@+id/edit_text_day2"
                     android:layout_width="35dp"
                     android:layout_height="wrap_content"
                     android:text="D"/>
@@ -215,6 +217,7 @@
             <LinearLayout>
 
                 <Button
+                    android:id="@+id/edit_text_week3"
                     android:layout_width="35dp"
                     android:layout_height="wrap_content"
                     android:text="W"/>
@@ -226,6 +229,7 @@
                     android:text="W"/>
 
                 <Button
+                    android:id="@+id/edit_text_day3"
                     android:layout_width="35dp"
                     android:layout_height="wrap_content"
                     android:text="D"/>

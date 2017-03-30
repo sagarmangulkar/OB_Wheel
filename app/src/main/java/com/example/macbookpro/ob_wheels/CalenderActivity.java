@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -14,55 +16,56 @@ import java.util.Calendar;
 
 public class CalenderActivity extends AppCompatActivity {
 
-    static final int DIALOG_ID = 0;
     public Button editDate1;
     public Button editDate2;
+    public Button editDate3;
+    public Button editDate4;
+    public Button editDate5;
+    public Button editDate6;
     int year_x, month_x, day_x;
 
-    /*
-    public EditText editDate1;
-    java.util.Calendar myCalendar = java.util.Calendar.getInstance();
-
-    DatePickerDialog.OnDateSetListener date1 = new DatePickerDialog.OnDateSetListener() {
-        @Override
-        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-            myCalendar.set(year, month, dayOfMonth);
-        }
-    };
-
-    public void init(){
-        editDate1 = (EditText) findViewById(R.id.editText);
-
-        editDate1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                editDate1.setText("Sagar", TextView.BufferType.EDITABLE);
-                DatePickerDialog dialog = new DatePickerDialog(getApplicationContext(), date1, 2015, 12, 27);
-                dialog.show();
-            }
-        });
-    }
-
-*/
     private DatePickerDialog datePickerDialog1;
     private DatePickerDialog datePickerDialog2;
+    private DatePickerDialog datePickerDialog3;
+    private DatePickerDialog datePickerDialog4;
+    private DatePickerDialog datePickerDialog5;
+    private DatePickerDialog datePickerDialog6;
     private DatePickerDialog.OnDateSetListener dPickerListener = new DatePickerDialog.OnDateSetListener() {
         @Override
         public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-            if (view == datePickerDialog1.getDatePicker()) {
-                Log.d("DEBUG", "1");
-            } else if (view == datePickerDialog2.getDatePicker()) {
-                Log.d("DEBUG", "2");
-            }
-            /*year_x = year;
+            year_x = year;
             month_x = month + 1;
             day_x = dayOfMonth;
-            Toast.makeText(CalenderActivity.this, year_x + "/" + month_x + "/" + day_x + " : " + view.getId() + " == " + R.id.editText + " | " + R.id.editText2, Toast.LENGTH_LONG).show();
-            if (view.getId() == R.id.editText) {
-                editDate1.setText(year_x + "/" + month_x + "/" + day_x, TextView.BufferType.EDITABLE);
-            } else if (view.getId() == R.id.editText2) {
-                editDate2.setText(year_x + "/" + month_x + "/" + day_x, TextView.BufferType.EDITABLE);
-            }*/
+            if (view == datePickerDialog1.getDatePicker()) {
+               // Log.d("DEBUG", "1. first date picker");
+                editDate1.setText(month_x + "-" + day_x + "-" + year_x, TextView.BufferType.EDITABLE);
+                Toast.makeText(CalenderActivity.this, month_x + "-" + day_x + "-" + year_x, Toast.LENGTH_LONG).show();
+            }
+            else if (view == datePickerDialog2.getDatePicker()) {
+                //Log.d("DEBUG", "2. second date picker");
+                editDate2.setText(month_x + "-" + day_x + "-" + year_x, TextView.BufferType.EDITABLE);
+                Toast.makeText(CalenderActivity.this, month_x + "-" + day_x + "-" + year_x, Toast.LENGTH_LONG).show();
+            }
+            else if (view == datePickerDialog3.getDatePicker()) {
+                // Log.d("DEBUG", "1. first date picker");
+                editDate3.setText(month_x + "-" + day_x + "-" + year_x, TextView.BufferType.EDITABLE);
+                Toast.makeText(CalenderActivity.this, month_x + "-" + day_x + "-" + year_x, Toast.LENGTH_LONG).show();
+            }
+            else if (view == datePickerDialog4.getDatePicker()) {
+                //Log.d("DEBUG", "2. second date picker");
+                editDate4.setText(month_x + "-" + day_x + "-" + year_x, TextView.BufferType.EDITABLE);
+                Toast.makeText(CalenderActivity.this, month_x + "-" + day_x + "-" + year_x, Toast.LENGTH_LONG).show();
+            }
+            else if (view == datePickerDialog5.getDatePicker()) {
+                // Log.d("DEBUG", "1. first date picker");
+                editDate5.setText(month_x + "-" + day_x + "-" + year_x, TextView.BufferType.EDITABLE);
+                Toast.makeText(CalenderActivity.this, month_x + "-" + day_x + "-" + year_x, Toast.LENGTH_LONG).show();
+            }
+            else if (view == datePickerDialog6.getDatePicker()) {
+                //Log.d("DEBUG", "2. second date picker");
+                editDate6.setText(month_x + "-" + day_x + "-" + year_x, TextView.BufferType.EDITABLE);
+                Toast.makeText(CalenderActivity.this, month_x + "-" + day_x + "-" + year_x, Toast.LENGTH_LONG).show();
+            }
         }
     };
 
@@ -70,8 +73,8 @@ public class CalenderActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calender);
-        //init();
 
+        //assigning current date to variables
         final Calendar calendar = Calendar.getInstance();
         year_x = calendar.get(calendar.YEAR);
         month_x = calendar.get(calendar.MONTH);
@@ -79,33 +82,20 @@ public class CalenderActivity extends AppCompatActivity {
         showDialogOnEditText();
     }
 
-
-    /*@Override
-    protected Dialog onCreateDialog(int id){
-        if (DIALOG_ID == id){
-            return new DatePickerDialog(this, dPickerListener, year_x, month_x, day_x);
-        }
-        return null;
-    }*/
-
     public void showDialogOnEditText() {
-        editDate1 = (Button) findViewById(R.id.edit_text_date1);
         datePickerDialog1 = new DatePickerDialog(CalenderActivity.this, dPickerListener, year_x, month_x, day_x);
         datePickerDialog2 = new DatePickerDialog(CalenderActivity.this, dPickerListener, year_x, month_x, day_x);
+        datePickerDialog3 = new DatePickerDialog(CalenderActivity.this, dPickerListener, year_x, month_x, day_x);
+        datePickerDialog4 = new DatePickerDialog(CalenderActivity.this, dPickerListener, year_x, month_x, day_x);
+        datePickerDialog5 = new DatePickerDialog(CalenderActivity.this, dPickerListener, year_x, month_x, day_x);
+        datePickerDialog6 = new DatePickerDialog(CalenderActivity.this, dPickerListener, year_x, month_x, day_x);
 
+        //for first datePicker
+        editDate1 = (Button) findViewById(R.id.edit_text_date1);
         editDate1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 datePickerDialog1.show();
-                /*new DatePickerDialog(CalenderActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        Toast.makeText(CalenderActivity.this,
-                                year_x + "/" + month_x + "/" + day_x + " : " +
-                                        view.getId() + " == " + R.id.editText + " | " + R.id.editText2, Toast.LENGTH_LONG)
-                                .show();
-                    }
-                }, year_x, month_x, day_x).show();*/
             }
         });
 
@@ -115,15 +105,42 @@ public class CalenderActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 datePickerDialog2.show();
-                /*new DatePickerDialog(CalenderActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        Toast.makeText(CalenderActivity.this,
-                                year_x + "/" + month_x + "/" + day_x + " : " +
-                                        view.getId() + " == " + R.id.editText + " | " + R.id.editText2, Toast.LENGTH_LONG)
-                                .show();
-                    }
-                }, year_x, month_x, day_x).show();*/
+            }
+        });
+
+        //for third datePicker
+        editDate3 = (Button) findViewById(R.id.edit_text_date3);
+        editDate3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datePickerDialog3.show();
+            }
+        });
+
+        //for forth datePicker
+        editDate4 = (Button) findViewById(R.id.edit_text_date4);
+        editDate4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datePickerDialog4.show();
+            }
+        });
+
+        //for fifth datePicker
+        editDate5 = (Button) findViewById(R.id.edit_text_date5);
+        editDate5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datePickerDialog5.show();
+            }
+        });
+
+        //for sixth datePicker
+        editDate6 = (Button) findViewById(R.id.edit_text_date6);
+        editDate6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datePickerDialog6.show();
             }
         });
     }
