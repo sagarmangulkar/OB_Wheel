@@ -1,12 +1,14 @@
 package com.example.macbookpro.ob_wheels;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,7 +16,7 @@ import java.util.Calendar;
 
 //import android.icu.util.Calendar;
 
-public class CalenderActivity extends AppCompatActivity {
+public class CalenderActivity extends AppCompatActivity implements View.OnClickListener {
 
     public Button editDate1;
     public Button editDate2;
@@ -34,7 +36,7 @@ public class CalenderActivity extends AppCompatActivity {
         @Override
         public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
             year_x = year;
-            month_x = month + 1;
+            month_x = month + 1;    //added 1 because month starts from 0 not from 1
             day_x = dayOfMonth;
             if (view == datePickerDialog1.getDatePicker()) {
                // Log.d("DEBUG", "1. first date picker");
@@ -74,12 +76,26 @@ public class CalenderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calender);
 
+        init();
+
         //assigning current date to variables
         final Calendar calendar = Calendar.getInstance();
         year_x = calendar.get(calendar.YEAR);
         month_x = calendar.get(calendar.MONTH);
         day_x = calendar.get(calendar.DAY_OF_MONTH);
         showDialogOnEditText();
+    }
+
+    public void init(){
+        findViewById(R.id.buttonSettingEDDInCalender).setOnClickListener(this);    }
+
+    @Override
+    public void onClick(View v){
+        switch (v.getId()){
+            case R.id.buttonSettingEDDInCalender:
+                startActivity(new Intent(this, SettingEDDActivity.class));
+                break;
+        }
     }
 
     public void showDialogOnEditText() {
