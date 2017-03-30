@@ -12,6 +12,7 @@ public class TraditionalWheelActivity extends AppCompatActivity {
     ImageView imageInnerWheel;
     ImageView imageOuterWheel;
     Button buttonRotateRight;
+    Button buttonRotateLeft;
     int rotationOffSet;
 
     @Override
@@ -19,8 +20,10 @@ public class TraditionalWheelActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_traditional_wheel);
         rotateRightWheel();
+        rotateLeftWheel();
     }
 
+    //logic to rotate inner wheel right
     public void rotateRightWheel(){
         imageInnerWheel = (ImageView)findViewById(R.id.imageInnerWheel);
         imageOuterWheel = (ImageView)findViewById(R.id.imageOuterWheel);
@@ -28,8 +31,23 @@ public class TraditionalWheelActivity extends AppCompatActivity {
         buttonRotateRight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("DEBUG", "Clicked...!");
-                rotationOffSet = rotationOffSet + 5;
+                Log.d("DEBUG", "Rotate Right Clicked...!");
+                rotationOffSet = rotationOffSet + 4;
+                imageInnerWheel.setRotation(rotationOffSet);
+            }
+        });
+    }
+
+    //logic to rotate inner wheel left
+    public void rotateLeftWheel(){
+        imageInnerWheel = (ImageView)findViewById(R.id.imageInnerWheel);
+        imageOuterWheel = (ImageView)findViewById(R.id.imageOuterWheel);
+        buttonRotateLeft = (Button)findViewById(R.id.buttonRotateLeft);
+        buttonRotateLeft.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("DEBUG", "Rotate Left Clicked...!");
+                rotationOffSet = rotationOffSet - 4;
                 imageInnerWheel.setRotation(rotationOffSet);
             }
         });
