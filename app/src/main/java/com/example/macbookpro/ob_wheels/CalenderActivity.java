@@ -12,6 +12,8 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 //import android.icu.util.Calendar;
@@ -42,6 +44,20 @@ public class CalenderActivity extends AppCompatActivity implements View.OnClickL
                // Log.d("DEBUG", "1. first date picker");
                 editDate1.setText(month_x + "-" + day_x + "-" + year_x, TextView.BufferType.EDITABLE);
                 Toast.makeText(CalenderActivity.this, month_x + "-" + day_x + "-" + year_x, Toast.LENGTH_LONG).show();
+
+
+                //setting date to EDD
+                String dateTemp = month_x + "-" + day_x + "-" + year_x;
+                SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
+                Calendar cTemp = Calendar.getInstance();
+                try{
+                    cTemp.setTime(sdf.parse(dateTemp));
+                }catch (ParseException e){
+                    e.printStackTrace();
+                }
+                cTemp.add(Calendar.DATE, 270);
+                String outputDate = sdf.format(cTemp.getTime());
+                editDate5.setText(outputDate, TextView.BufferType.EDITABLE);
             }
             else if (view == datePickerDialog2.getDatePicker()) {
                 //Log.d("DEBUG", "2. second date picker");
