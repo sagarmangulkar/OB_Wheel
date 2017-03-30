@@ -7,4 +7,7 @@
     <string name="it_s_the_real_wheel_clunky_but_accurate">It\'s the real wheel, clunky but accurate</string>
     <string name="scheme_for_using_lmp_and_sonogram"><![CDATA[scheme for using LMP and sonogram to determine final EDD (for students & residents)]]></string>
     <string name="Choose_a_resource">Choose a resource for determining estimated due date (EDD), estimated gestational age (EGA), and setting a final EDD.</string>
+    <string name="Setting_EDD_text1"><![CDATA[ACOG 2014 (see ref) dating scheme. Discussion follows.]]></string>
+    <string name="Settind_EDD_text2">EGA via LMP   ≤ 8 6/7 wks 9 to 15 6/7 wks 16 to 21 6/7 wks 22 to 27 6/7 wks ≥ 28 wks</string>
+    <string name="Setting_EDD_text3"><![CDATA[Use Sono-EDD if differs from LMP-EDD by: > 5 days > 7 days > 10 days > 14 days > 21 days and]]></string>
 </resources>
