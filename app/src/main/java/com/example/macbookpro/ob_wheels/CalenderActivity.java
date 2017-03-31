@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.concurrent.TimeUnit;
 
 //import android.icu.util.Calendar;
 
@@ -26,6 +28,12 @@ public class CalenderActivity extends AppCompatActivity implements View.OnClickL
     public Button editDate4;
     public Button editDate5;
     public Button editDate6;
+    public EditText editWeel1;
+    public EditText editWeel2;
+    public EditText editWeel3;
+    public EditText editDays1;
+    public EditText editDays2;
+    public EditText editDays3;
     int year_x, month_x, day_x;
 
     private DatePickerDialog datePickerDialog1;
@@ -50,19 +58,51 @@ public class CalenderActivity extends AppCompatActivity implements View.OnClickL
                 String dateTemp = month_x + "-" + day_x + "-" + year_x;
                 SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
                 Calendar cTemp = Calendar.getInstance();
+                Calendar cTemp1 = Calendar.getInstance();
                 try{
                     cTemp.setTime(sdf.parse(dateTemp));
-                }catch (ParseException e){
+                    cTemp1.setTime(sdf.parse(dateTemp));
+                }
+                catch (ParseException e){
                     e.printStackTrace();
                 }
-                cTemp.add(Calendar.DATE, 270);
+                cTemp.add(Calendar.DATE, 280);
                 String outputDate = sdf.format(cTemp.getTime());
-                editDate5.setText(outputDate, TextView.BufferType.EDITABLE);
+                editDate3.setText(outputDate, TextView.BufferType.EDITABLE);
+
+                //seeting weeks and days to EGA
+                long msDiff = Calendar.getInstance().getTimeInMillis() - cTemp1.getTimeInMillis();
+                long daysDiff = TimeUnit.MILLISECONDS.toDays(msDiff);
+                editWeel2.setText(String.valueOf(daysDiff/7), TextView.BufferType.EDITABLE);
+                editDays2.setText(String.valueOf(daysDiff%7 - 1), TextView.BufferType.EDITABLE);
+
             }
             else if (view == datePickerDialog2.getDatePicker()) {
                 //Log.d("DEBUG", "2. second date picker");
                 editDate2.setText(month_x + "-" + day_x + "-" + year_x, TextView.BufferType.EDITABLE);
                 Toast.makeText(CalenderActivity.this, month_x + "-" + day_x + "-" + year_x, Toast.LENGTH_LONG).show();
+
+                //setting date to EDD
+                String dateTemp = month_x + "-" + day_x + "-" + year_x;
+                SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
+                Calendar cTemp = Calendar.getInstance();
+                Calendar cTemp1 = Calendar.getInstance();
+                try{
+                    cTemp.setTime(sdf.parse(dateTemp));
+                    cTemp1.setTime(sdf.parse(dateTemp));
+                }
+                catch (ParseException e){
+                    e.printStackTrace();
+                }
+                cTemp.add(Calendar.DATE, 280);
+                String outputDate = sdf.format(cTemp.getTime());
+                editDate4.setText(outputDate, TextView.BufferType.EDITABLE);
+
+                //seeting weeks and days to EGA
+                long msDiff = Calendar.getInstance().getTimeInMillis() - cTemp1.getTimeInMillis();
+                long daysDiff = TimeUnit.MILLISECONDS.toDays(msDiff);
+                editWeel3.setText(String.valueOf(daysDiff/7), TextView.BufferType.EDITABLE);
+                editDays3.setText(String.valueOf(daysDiff%7 - 1), TextView.BufferType.EDITABLE);
             }
             else if (view == datePickerDialog3.getDatePicker()) {
                 // Log.d("DEBUG", "1. first date picker");
@@ -173,6 +213,61 @@ public class CalenderActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onClick(View v) {
                 datePickerDialog6.show();
+            }
+        });
+
+        //for first week edit text
+        editWeel1 = (EditText)findViewById(R.id.edit_text_week1);
+        editWeel1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editWeel1.setText("touched...!", TextView.BufferType.EDITABLE);
+            }
+        });
+
+        //for first week edit text
+        editWeel2 = (EditText)findViewById(R.id.edit_text_week2);
+        editWeel2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editWeel2.setText("touched...!", TextView.BufferType.EDITABLE);
+            }
+        });
+
+        //for first week edit text
+        editWeel3 = (EditText)findViewById(R.id.edit_text_week3);
+        editWeel3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editWeel3.setText("touched...!", TextView.BufferType.EDITABLE);
+            }
+        });
+
+
+        //for first week edit text
+        editDays1 = (EditText)findViewById(R.id.edit_text_day1);
+        editDays1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editDays1.setText("touched...!", TextView.BufferType.EDITABLE);
+            }
+        });
+
+        //for first week edit text
+        editDays2 = (EditText)findViewById(R.id.edit_text_day2);
+        editDays2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editDays2.setText("touched...!", TextView.BufferType.EDITABLE);
+            }
+        });
+
+        //for first week edit text
+        editDays3 = (EditText)findViewById(R.id.edit_text_day3);
+        editDays3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editDays3.setText("touched...!", TextView.BufferType.EDITABLE);
             }
         });
     }
