@@ -9,16 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="activities.MainActivity"></activity>
+        <activity android:name="activities.CalenderActivity" />
+        <activity android:name="activities.TraditionalWheelActivity" />
+        <activity android:name="activities.SettingEDDActivity" />
+        <activity
+            android:name="activities.ObLandingActivity"
+            android:label="@string/title_activity_ob_landing"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CalenderActivity" />
-        <activity android:name=".TraditionalWheelActivity" />
-        <activity android:name=".SettingEDDActivity"></activity>
     </application>
 
 </manifest>

@@ -1,14 +1,16 @@
-package com.example.macbookpro.ob_wheels;
+package activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.example.macbookpro.ob_wheels.R;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
-    public void init() {
+    private void init() {
         findViewById(R.id.button_cal).setOnClickListener(this);
         findViewById(R.id.button_wheel).setOnClickListener(this);
         findViewById(R.id.button_setting_edd).setOnClickListener(this);
