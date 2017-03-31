@@ -22,7 +22,7 @@ public class HomeFragment extends Fragment implements ObFragments, View.OnClickL
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.activity_main, container, false);
+        rootView = inflater.inflate(R.layout.fragment_home, container, false);
         init();
         return rootView;
     }
