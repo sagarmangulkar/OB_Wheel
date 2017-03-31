@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.example.macbookpro.ob_wheels.R;
 
@@ -16,25 +15,28 @@ public class TraditionalWheelActivity extends AppCompatActivity {
     ImageView imageOuterWheel;
     Button buttonRotateRight;
     Button buttonRotateLeft;
-    Button buttonZoomIn;
-    Button buttonZoomOut;
-    int rotationOffSet;
+    int rotationOffSet = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_traditional_wheel);
+        initViews();
         rotateRightWheel();
         rotateLeftWheel();
-        zoomIn();
-        zoomOut();
+        //final ZoomableFrameLayout zoomableFrameLayout = (ZoomableFrameLayout) findViewById(R.id.parent_frame);
+        //zoomableFrameLayout.setWillNotDraw(false);
+    }
+
+    private void initViews() {
+        imageInnerWheel = (ImageView) findViewById(R.id.imageInnerWheel);
+        imageOuterWheel = (ImageView) findViewById(R.id.imageOuterWheel);
+        buttonRotateLeft = (Button) findViewById(R.id.buttonRotateLeft);
+        buttonRotateRight = (Button) findViewById(R.id.buttonRotateRight);
     }
 
     //logic to rotate inner wheel right
     public void rotateRightWheel() {
-        imageInnerWheel = (ImageView) findViewById(R.id.imageInnerWheel);
-        imageOuterWheel = (ImageView) findViewById(R.id.imageOuterWheel);
-        buttonRotateRight = (Button) findViewById(R.id.buttonRotateRight);
         buttonRotateRight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,9 +49,6 @@ public class TraditionalWheelActivity extends AppCompatActivity {
 
     //logic to rotate inner wheel left
     public void rotateLeftWheel() {
-        imageInnerWheel = (ImageView) findViewById(R.id.imageInnerWheel);
-        imageOuterWheel = (ImageView) findViewById(R.id.imageOuterWheel);
-        buttonRotateLeft = (Button) findViewById(R.id.buttonRotateLeft);
         buttonRotateLeft.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,10 +59,7 @@ public class TraditionalWheelActivity extends AppCompatActivity {
         });
     }
 
-    public void zoomIn() {
-        imageInnerWheel = (ImageView) findViewById(R.id.imageInnerWheel);
-        imageOuterWheel = (ImageView) findViewById(R.id.imageOuterWheel);
-        buttonZoomIn = (Button) findViewById(R.id.buttonZoomIn);
+    /*public void zoomIn() {
         buttonZoomIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,9 +77,6 @@ public class TraditionalWheelActivity extends AppCompatActivity {
     }
 
     public void zoomOut() {
-        imageInnerWheel = (ImageView) findViewById(R.id.imageInnerWheel);
-        imageOuterWheel = (ImageView) findViewById(R.id.imageOuterWheel);
-        buttonZoomOut = (Button) findViewById(R.id.buttonZoomOut);
         buttonZoomOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,5 +91,5 @@ public class TraditionalWheelActivity extends AppCompatActivity {
                 }
             }
         });
-    }
+    }*/
 }
