@@ -19,6 +19,8 @@ public class ObLandingActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setTitle(R.string.app_name);
+        setTitle(R.string.app_name);
         SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         ViewPager mViewPager = (ViewPager) findViewById(R.id.container);
