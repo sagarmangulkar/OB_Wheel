@@ -17,9 +17,12 @@ public class MoreAppsFragment extends Fragment implements ObFragments {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_ob_landing, container, false);
-        TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-        textView.setText("AAAA");
+        View rootView = inflater.inflate(R.layout.fragment_text_title_body, container, false);
+        TextView textViewTitle = (TextView) rootView.findViewById(R.id.text_view_title);
+        TextView textViewBody = (TextView) rootView.findViewById(R.id.text_view_body);
+
+        textViewTitle.setText("Coming soon...");
+        textViewBody.setText("");
         return rootView;
     }
 
