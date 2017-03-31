@@ -12,9 +12,6 @@ import adapters.SectionsPagerAdapter;
 
 public class ObLandingActivity extends AppCompatActivity {
 
-    private SectionsPagerAdapter mSectionsPagerAdapter;
-    private ViewPager mViewPager;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,13 +19,21 @@ public class ObLandingActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
-        mViewPager = (ViewPager) findViewById(R.id.container);
+        ViewPager mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
+
+        if (tabLayout.getTabCount() >= 5) {
+            tabLayout.getTabAt(0).setIcon(R.drawable.ic_home_white_24dp);
+            tabLayout.getTabAt(1).setIcon(R.drawable.ic_report_problem_white_24dp);
+            tabLayout.getTabAt(2).setIcon(R.drawable.ic_info_white_24dp);
+            tabLayout.getTabAt(3).setIcon(R.drawable.ic_library_books_white_24dp);
+            tabLayout.getTabAt(4).setIcon(R.drawable.ic_more_white_24dp);
+        }
     }
 
 
